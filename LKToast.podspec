@@ -21,22 +21,22 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/李考/LKToast'
+  s.homepage         = 'https://github.com/LKShadow/LKToast.git'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { '李考' => '807642441@qq.com' }
-  s.source           = { :git => 'https://github.com/李考/LKToast.git', :tag => s.version.to_s }
+  s.source           = { :git => 'git@github.com:LKShadow/LKToast.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '9.0'
 
   s.source_files = 'LKToast/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'LKToast' => ['LKToast/Assets/*.png']
-  # }
+   s.resource_bundles = {
+     'LKToast' => ['LKToast/Assets/*.{.xcassets}']
+   }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
+  s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  # s.dependency 'MBProgressHUD', '~> 1.2.0'
 end
