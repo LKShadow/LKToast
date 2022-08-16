@@ -33,7 +33,7 @@ TODO: Add long description of the pod here.
   s.source_files = 'LKToast/Classes/**/*'
   
    s.resource_bundles = {
-     'LKToast' => ['LKToast/Assets/*.{.xcassets}']
+     'LKToast_Resources' => ['LKToast/Assets/*.{xcassets, bundle}']
    }
 
   s.public_header_files = 'Pod/Classes/**/*.h'

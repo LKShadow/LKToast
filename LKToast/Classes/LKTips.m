@@ -33,7 +33,7 @@ static NSTimeInterval _hideTimeInterval;
     static LKTips *shareTips;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        shareTips = [[self alloc] initWithFrame:[UIApplication sharedApplication].delegate.window.bounds];
+        shareTips = [[self alloc] initWithFrame:[UIScreen mainScreen].bounds];
     });
     return shareTips;
 }
@@ -171,10 +171,11 @@ static NSTimeInterval _hideTimeInterval;
     static NSBundle *resourceBoundle = nil;
     if (!resourceBoundle) {
         NSBundle *mainBoundle = [NSBundle bundleForClass:self];
-        NSString *sourcePath = [mainBoundle pathForResource:@"ToastImage" ofType:@"bundle"];
+        NSString *sourcePath = [mainBoundle pathForResource:@"LKToast_Resources" ofType:@"bundle"];
         resourceBoundle = [NSBundle bundleWithPath:sourcePath] ?: mainBoundle;
     }
-    return [UIImage imageNamed:iconName inBundle:resourceBoundle compatibleWithTraitCollection:nil];
+    UIImage *icon = [UIImage imageNamed:iconName inBundle:resourceBoundle compatibleWithTraitCollection:nil];
+    return icon;
 }
 #pragma 获取创建的tips
 + (LKLoadingTips *)createLoadingTipsToView:(UIView *)view {
